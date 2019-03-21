@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spiik/src/screens/home/widgets/counter.dart';
+import 'package:spiik/src/screens/home/widgets/description.dart';
 
 class Home extends StatefulWidget {
   Home({ Key key, this.title }) : super(key: key);
@@ -33,28 +35,12 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Center(
-            child: Container(
-              height: 80.0,
-              decoration: BoxDecoration(
-                color: Colors.black45
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'You have pushed the button this many times:',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      '$_counter',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Counter(this._counter),
+              new Description('Bongga', 1.5, 'In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content.'),
+            ],
           ),
         ],
       ),
