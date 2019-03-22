@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spiik/src/screens/home.dart';
+import 'package:spiik/src/screens/agent.dart';
 
 void main() => runApp(Spiik());
 
@@ -10,9 +10,9 @@ class Spiik extends StatelessWidget {
     return MaterialApp(
       title: 'Spiik',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
-      home: Home(title: 'Spiik'),
+      home: Agent(title: 'Spiik'),
     );
   }
 }

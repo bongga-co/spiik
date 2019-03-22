@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiik/src/screens/agent.dart';
 import 'package:spiik/src/screens/home/widgets/counter.dart';
 import 'package:spiik/src/screens/home/widgets/description.dart';
 
@@ -21,16 +22,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          leading: Icon(Icons.arrow_back),
-          title: Text(widget.title)
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/bg.jpg'),
+                image: AssetImage('assets/images/bg.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,8 +36,20 @@ class _HomeState extends State<Home> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Counter(this._counter),
-              new Description('Bongga', 1.5, 'In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content.'),
+              Counter(this._counter),
+              Description('Bongga', 1.5, 'In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content.'),
+              new Container(
+                margin: EdgeInsets.all(10.0),
+                child: new RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Agent()),
+                    );
+                  },
+                  child: Text("Go to the Agent"),
+                ),
+              ),
             ],
           ),
         ],
