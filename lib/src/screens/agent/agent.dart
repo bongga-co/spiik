@@ -18,7 +18,7 @@ class _AgentState extends State<Agent> {
 
   void _onQueryAgent(String query) async {
     AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/config/Touristeando-c3cd0a2737a8.json").build();
-    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle,language: Language.SPANISH_LATIN_AMERICA);
+    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle, language: 'es');
     AIResponse response = await dialogflow.detectIntent(query);
 
     TextMessage msg = new TextMessage(

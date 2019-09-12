@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spiik/src/screens/agent.dart';
+import 'package:spiik/src/screens/agent/agent.dart';
 
 void main() => runApp(Spiik());
 
